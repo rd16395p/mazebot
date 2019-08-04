@@ -2,7 +2,8 @@ import requests
 import numpy as np
 
 #fix why it cant find the goal and start cords..
-start = 0
+#start = 0
+#goal = 0
 startx = 0
 starty = 0
 goalx = 0
@@ -14,8 +15,8 @@ def explore(value):
         print("A wall!")
     elif value == "A":
         print("Found the start!")
-        startx, starty = np.where(map == "A")
-        start = zip(*np.where(map == "A"))
+        #startx, starty = np.where(map == "A")
+        #start = zip(*np.where(map == "A"))
     elif value == "B":
         print("Found the goal!")
         goalx, goaly = np.where(map == "B")
@@ -43,8 +44,10 @@ for n in map:
         #print(j)
         explore(j)
 
+startx, starty = np.where(map == "A")
 print(startx, starty)
+goalx, goaly = np.where(map == "B")
 print(goalx, goaly)
-print(start)
+
 
 #use a* and solve it
